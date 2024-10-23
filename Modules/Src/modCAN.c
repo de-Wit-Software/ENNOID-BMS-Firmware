@@ -334,7 +334,7 @@ void modCANSendStatusVESC(void){
 		buffer[send_index++] = (bal_state >> 24) & 0xFF;
 		buffer[send_index++] = (bal_state >> 16) & 0xFF;
 		buffer[send_index++] = (bal_state >> 8) & 0xFF;
-		buffer[send_index++] = (bal_state >> 8) & 0xFF;
+		buffer[send_index++] = (bal_state >> 0) & 0xFF;
 		modCANTransmitExtID(modCANGetCANID(modCANGeneralConfigHandle->CANID,CAN_PACKET_BMS_BAL), buffer, send_index);
 
 		uint8_t auxPointer = 0;
